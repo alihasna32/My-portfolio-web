@@ -7,4 +7,7 @@
 @tailwind utilities;
 body {
   font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 50% 0%, rgba(37, 150, 190, 0.2) 0%, #000000 100%);
+  min-height: 100vh;
+  color: #e5e7eb;
 }

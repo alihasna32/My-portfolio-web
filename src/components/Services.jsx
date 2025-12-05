@@ -6,24 +6,24 @@ import socialLogo from '../assets/Social-manager.jpg';
 
 const Services = () => {
     return (
-        <div className="bg-gray-200/30 dark:bg-gray-900/40 p-6 rounded-lg border border-gray-300 dark:border-gray-700">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Services I Offered</h2>
+        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 shadow-lg p-6 rounded-lg">
+            <h2 className="text-xl font-bold text-white mb-6">Services I Offered</h2>
             <div className="grid grid-cols-2 gap-4">
-                <div className="flex flex-col items-center p-4 bg-gray-300/30 dark:bg-gray-800/40 rounded-lg border border-gray-400/50 dark:border-gray-700/50">
-                    <img alt="UI UX Design icon" className="h-16 w-16 mb-2 invert dark:invert-0" src={webLogo} />
-                    <p className="text-sm text-center text-gray-700 dark:text-gray-300">Web Development</p>
+                <div className="flex flex-col items-center p-4  border-gray-600/100 rounded-lg border">
+                    <img alt="UI UX Design icon" className="h-16 w-16 mb-2 invert dark:invert-0 rounded-xl" src={webLogo} />
+                    <p className="text-sm text-center text-gray-300">Web Development</p>
                 </div>
-                <div className="flex flex-col items-center p-4 bg-gray-300/30 dark:bg-gray-800/40 rounded-lg border border-gray-400/50 dark:border-gray-700/50">
-                    <img alt="Mobile App icon" className="h-16 w-16 mb-2 invert dark:invert-0" src={photoLogo} />
-                    <p className="text-sm text-center text-gray-700 dark:text-gray-300">Photo Editing</p>
+                <div className="flex flex-col items-center p-4  border-gray-600/100 rounded-lg border">
+                    <img alt="Mobile App icon" className="h-16 w-16 mb-2 invert dark:invert-0 rounded-xl" src={photoLogo} />
+                    <p className="text-sm text-center text-gray-300">Photo Editing</p>
                 </div>
-                <div className="flex flex-col items-center p-4 bg-gray-300/30 dark:bg-gray-800/40 rounded-lg border border-gray-400/50 dark:border-gray-700/50">
-                    <img alt="Product Design icon" className="h-16 w-16 mb-2 invert dark:invert-0" src={productLogo} />
-                    <p className="text-sm text-center text-gray-700 dark:text-gray-300">Product Design</p>
+                <div className="flex flex-col items-center p-4  border-gray-600/100 rounded-lg border">
+                    <img alt="Product Design icon" className="h-16 w-16 mb-2 invert dark:invert-0 rounded-xl" src={productLogo} />
+                    <p className="text-sm text-center text-gray-300">Product Design</p>
                 </div>
-                <div className="flex flex-col items-center p-4 bg-gray-300/30 dark:bg-gray-800/40 rounded-lg border border-gray-400/50 dark:border-gray-700/50">
-                    <img alt="Branding icon" className="h-16 w-16 mb-2 invert dark:invert-0" src={socialLogo} />
-                    <p className="text-sm text-center text-gray-700 dark:text-gray-300">Social Media Management</p>
+                <div className="flex flex-col items-center p-4  border-gray-600/100 rounded-lg border">
+                    <img alt="Branding icon" className="h-16 w-16 mb-2 invert dark:invert-0 rounded-xl" src={socialLogo} />
+                    <p className="text-sm text-center text-gray-300">Social Media Management</p>
                 </div>
             </div>
         </div>

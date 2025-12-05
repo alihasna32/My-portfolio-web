@@ -7,12 +7,13 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
       <Layout>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="container mx-auto px-2 sm:px-6 sm:py-6 lg:px-8 py-2">
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -20,6 +21,7 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+         <Footer />
         </div>
         <ScrollToTop />
       </Layout>

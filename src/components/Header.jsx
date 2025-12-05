@@ -8,32 +8,32 @@ const Header = () => {
     const isActive = (path) => location.pathname === path;
 
     return (
-        <header className="flex justify-between items-center mb-8">
-            <div className="flex items-center gap-2">
-                <img src={Logo} className="w-12 h-12" alt="Logo" />
-                <span className="text-2xl font-bold text-gray-800 dark:text-white">Ali Hasan</span>
-            </div>
+        <header className="flex justify-between items-center mb-8 bg-gray-900/30 backdrop-blur-md border border-white/10 shadow-lg px-6 py-1.5 rounded-lg max-sm:px-2 max-sm:py-1 max-sm:h-12 sticky top-0 z-50">
+            <Link to="/" className="flex items-center gap-2">
+                <img src={Logo} className="w-12 h-12 max-sm:w-10 max-sm:h-10" alt="Logo" />
+                <span className="text-2xl font-bold text-white max-sm:text-xl">Ali Hasan</span>
+            </Link>
 
             {/* Desktop Menu - Visible on lg screens and up */}
             <nav className="hidden lg:flex">
                 <ul className="flex items-center space-x-1">
                     <li>
-                        <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm ${isActive('/') ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'}`} to="/">
-                            <House   className='w-4' />    Home
+                        <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/">
+                            <House className='w-4' />    Home
                         </Link>
                     </li>
                     <li>
-                        <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm ${isActive('/about') ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'}`} to="/about">
+                        <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/about') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/about">
                             <UserRound className='w-4' /> About
                         </Link>
                     </li>
                     <li>
-                        <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm ${isActive('/portfolio') ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'}`} to="/portfolio">
+                        <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/portfolio') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/portfolio">
                             <BriefcaseBusiness className='w-4' /> Portfolio
                         </Link>
                     </li>
                     <li>
-                        <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm ${isActive('/contact') ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'}`} to="/contact">
+                        <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/contact') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/contact">
                             <Mail className='w-4' /> Contact
                         </Link>
                     </li>
@@ -50,7 +50,7 @@ const Header = () => {
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            className="h-6 w-6 stroke-current"
+                            className="h-6 w-6 stroke-current text-white"
                         >
                             <path
                                 strokeLinecap="round"
@@ -62,32 +62,32 @@ const Header = () => {
                     </label>
                 </div>
 
-                <div className="drawer-side z-50">
+                <div className="drawer-side z-50 ">
                     <label htmlFor="my-drawer-5" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content flex flex-col gap-2">
+                    <ul className="menu p-4 w-80 min-h-full bg-gray-900/30 backdrop-blur-md border border-white/10 shadow-lg text-base-content flex flex-col gap-2">
                         {/* Close button inside drawer */}
-                        <li className="self-end">
-                            <label htmlFor="my-drawer-5" aria-label="close sidebar" className="btn btn-sm btn-circle btn-ghost">
+                        <li className="self-end right-5 bottom-0.5">
+                            <label htmlFor="my-drawer-5" aria-label="close sidebar" className="btn btn-sm btn-circle btn-ghost text-white bg-error">
                                 ✕
                             </label>
                         </li>
                         <li>
-                            <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm ${isActive('/') ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'}`} to="/">
+                            <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/">
                                 <House className="w-4" /> Home
                             </Link>
                         </li>
                         <li>
-                            <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm ${isActive('/about') ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'}`} to="/about">
+                            <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/about') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/about">
                                 <UserRound className="w-4" /> About
                             </Link>
                         </li>
                         <li>
-                            <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm ${isActive('/portfolio') ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'}`} to="/portfolio">
+                            <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/portfolio') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/portfolio">
                                 <BriefcaseBusiness className="w-4" /> Portfolio
                             </Link>
                         </li>
                         <li>
-                            <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm ${isActive('/contact') ? 'bg-primary text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'}`} to="/contact">
+                            <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/contact') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/contact">
                                 <Mail className="w-4" /> Contact
                             </Link>
                         </li>

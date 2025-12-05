@@ -2,9 +2,10 @@ import React from 'react';
 
 const WorkExperience = () => {
     return (
-        <div className="bg-gray-200/30 dark:bg-gray-900/40 p-6 rounded-lg border border-gray-300 dark:border-gray-700">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Work Experience</h2>
-            <div className="text-gray-600 dark:text-gray-400 italic">
+        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)]
+ backdrop-blur-md border border-white/10 p-6 rounded-lg">
+            <h2 className="text-xl font-bold text-white mb-6">Work Experience</h2>
+            <div className="text-gray-400 italic">
                 I have no work experience. You can give me a chance.👨‍💻
             </div>
             {/* <div className="space-y-4">
