@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import profile from '../assets/Profile.png';
+import profile from '../assets/Profile2.png';
 import { Download } from 'lucide-react';
 import MySkills from '../components/My-skills';
 import Education from '../components/Education';
