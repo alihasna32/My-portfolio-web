@@ -14,7 +14,7 @@ const About = () => {
             transition={{ duration: 0.5 }}
         >
             <main className="space-y-12">
-                <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 shadow-lg p-8 rounded-lg">
+                <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-sm border border-white/10 shadow-lg p-8 rounded-lg">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                         <div className="lg:col-span-1">
                             <img alt="Portrait of Ali Hasan" className="rounded-lg w-full object-cover" src={profile} />

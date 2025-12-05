@@ -6,7 +6,7 @@ import socialLogo from '../assets/Social-manager.jpg';
 
 const Services = () => {
     return (
-        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 shadow-lg p-6 rounded-lg">
+        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-sm border border-white/10 shadow-lg p-6 rounded-lg">
             <h2 className="text-xl font-bold text-white mb-6">Services I Offered</h2>
             <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col items-center p-4  border-gray-600/100 rounded-lg border">

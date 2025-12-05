@@ -7,7 +7,7 @@ import htmlcssLogo from '../assets/HtmlCss.jpg';
 import farmerMotionLogo from '../assets/Framer-motion.png';
 const ExpertArea = () => {
     return (
-        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 shadow-lg p-6 rounded-lg">
+        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-sm border border-white/10 shadow-lg p-6 rounded-lg">
             <h2 className="text-xl font-bold text-white mb-6">My Expert Area</h2>
             <div className="grid grid-cols-3 gap-4">
                 <div className="flex flex-col items-center p-3  rounded-lg border border-gray-600/100">

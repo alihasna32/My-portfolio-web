@@ -15,7 +15,7 @@ const Header = () => {
     };
 
     return (
-        <header className="flex justify-between items-center mb-8 bg-gray-900/30 backdrop-blur-md border border-white/10 shadow-lg px-6 py-1.5 rounded-lg max-sm:px-2 max-sm:py-1 max-sm:h-12 sticky top-0 z-50">
+        <header className="flex justify-between items-center mb-8 bg-gray-900/50 backdrop-blur-sm border border-white/10 shadow-lg px-6 py-1.5 rounded-lg max-sm:px-2 max-sm:py-1 max-sm:h-12 sticky top-0 z-50">
             <Link to="/" className="flex items-center gap-2">
                 <img src={Logo} className="w-12 h-12 max-sm:w-10 max-sm:h-10" alt="Logo" />
                 <span className="text-2xl font-bold text-white max-sm:text-xl">Ali Hasan</span>
@@ -71,7 +71,7 @@ const Header = () => {
 
                 <div className="drawer-side z-50 ">
                     <label htmlFor="my-drawer-5" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-gray-900/30 backdrop-blur-md border border-white/10 shadow-lg text-base-content flex flex-col gap-2">
+                    <ul className="menu p-4 w-80 min-h-full bg-gray-900/30 backdrop-blur-sm border border-white/10 shadow-lg text-base-content flex flex-col gap-2">
                         {/* Close button inside drawer */}
                         <li className="self-end right-5 bottom-0.5">
                             <label htmlFor="my-drawer-5" aria-label="close sidebar" className="btn btn-sm btn-circle btn-ghost text-white bg-error">

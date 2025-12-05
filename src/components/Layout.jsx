@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
     return (
         <div className="text-gray-300 font-display min-h-screen relative">
             <GlowingBackground />
-            <div className="relative z-10">
+            <div className="relative z-10 will-change-transform">
                 {children}
             </div>
         </div>

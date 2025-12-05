@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Github, Instagram, Linkedin, SendHorizontal, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Github, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import ContactForm from '../components/ContactForm';
 
 const showToast = () => {
     const toast = document.getElementById("customToast");
@@ -32,37 +33,11 @@ const Contact = () => {
                     <p className="text-gray-300">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div className="lg:col-span-2 bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 shadow-lg p-8 rounded-lg">
-                        <h2 className="text-2xl font-bold text-white mb-6">Send Me A Message</h2>
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="name">Name</label>
-                                    <input className="w-full h-9 bg-transparent border-1 rounded-xl border border-gray-600 focus:ring-0 focus:border-primary text-gray-200 px-2" id="name" placeholder="Your Name" type="text" />
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="email">Email</label>
-                                    <input className="w-full h-9 bg-transparent border-1 rounded-xl border border-gray-600 focus:ring-0 focus:border-primary text-gray-200 px-2" id="email" placeholder="Your Email" type="email" />
-                                </div>
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="subject">Subject</label>
-                                <input className="w-full h-9 bg-transparent border-1 rounded-xl border border-gray-600 focus:ring-0 focus:border-primary text-gray-200 px-2" id="subject" placeholder="Subject" type="text" />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="message">Message</label>
-                                <textarea className="w-full h-22 bg-transparent border-1 rounded-xl border border-gray-600 focus:ring-0 focus:border-primary text-gray-200 px-2 py-2" id="message" placeholder="Your Message" rows="5"></textarea>
-                            </div>
-                            <div>
-                                <button className="inline-flex items-center gap-2 bg-primary text-white rounded-xl h-9 focus:ring-primary focus:border-primary px-2 hover:bg-blue-500 transition-colors" type="submit">
-                                    <SendHorizontal />
-                                    Send Message
-                                </button>
-                            </div>
-                        </form>
+                    <div className="lg:col-span-2">
+                        <ContactForm />
                     </div>
                     <div className="space-y-8">
-                        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 shadow-lg p-8 rounded-lg">
+                        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-sm border border-white/10 shadow-lg p-8 rounded-lg">
                             <h3 className="text-xl font-bold text-white mb-4">Contact Information</h3>
                             <div className="space-y-4 text-gray-300">
                                 <div className="flex items-center gap-4">

@@ -3,7 +3,7 @@ import React from 'react';
 const MySkills = () => {
     return (
         <div>
-            <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 shadow-lg p-8 rounded-lg">
+            <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-sm border border-white/10 shadow-lg p-8 rounded-lg">
                 <h2 className="text-2xl font-bold text-white mb-6">My Skills</h2>
                 <div className="space-y-6">
                     <div>

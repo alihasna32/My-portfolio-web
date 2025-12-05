@@ -25,7 +25,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 shadow-lg p-6 rounded-lg">
+        <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-sm border border-white/10 shadow-lg p-6 rounded-lg">
             <img alt="Portrait of Mark Alexander" className="rounded-lg mb-6 mx-auto w-full max-w-xs h-full" src={profile} />
             <h1 className="text-3xl font-bold text-white mb-2">Md. Ali Hasan</h1>
             <p className="text-gray-300 mb-6">Motivated Full-Stack developer (MERN Stack) aiming to start a professional career in the tech industry. I
