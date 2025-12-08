@@ -16,8 +16,30 @@ const ContactForm = () => {
             form.current,
             import.meta.env.VITE_PUBLIC_KEY
         )
-            .then((result) => {
+            .then(async (result) => {
                 console.log(result.text);
+
+                // Save to Database
+                try {
+                    const formData = new FormData(form.current);
+                    const messageData = {
+                        name: formData.get('user_name'),
+                        email: formData.get('user_email'),
+                        subject: formData.get('subject'),
+                        message: formData.get('message')
+                    };
+
+                    await fetch('http://localhost:5000/api/messages', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(messageData)
+                    });
+                } catch (err) {
+                    console.error("Failed to save message to DB", err);
+                }
+
                 setStatus('success');
                 e.target.reset();
                 setTimeout(() => setStatus(''), 3000);

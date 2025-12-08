@@ -4,7 +4,6 @@ import profile from '../assets/Profile2.png';
 import { Download } from 'lucide-react';
 import MySkills from '../components/My-skills';
 import Education from '../components/Education';
-import resume from '../assets/Resume_Md_Ali_Hasan.pdf';
 
 const About = () => {
     return (
@@ -25,19 +24,24 @@ const About = () => {
                                 Hi, I’m Ali Hasan — a passionate and dedicated MERN Stack Web Developer with strong skills in building modern, responsive, and user-friendly web applications.I enjoy transforming ideas into functional digital experiences using clean code, organized architecture, and smooth UI/UX.
                             </p>
                             <p className="text-gray-300 mb-6 leading-relaxed">
-                                I specialize in JavaScript, React, Node.js, Express, MongoDB, and I love creating fast, secure, and scalable full-stack applications.From crafting pixel-perfect frontend UI to developing efficient backend APIs, I aim to deliver complete solutions that actually solve real-world problems.
+                                I specialize in <span className="font-semibold">JavaScript, React, Node.js, Express, MongoDB,</span> and I love creating fast, secure, and scalable full-stack applications.From crafting pixel-perfect <span className="font-semibold">frontend UI</span> to developing efficient <span className="font-semibold">backend APIs</span>, I aim to deliver complete solutions that actually solve real-world problems.
                             </p>
                             <p className="text-gray-300 mb-6 leading-relaxed">
-                                I’m constantly learning new technologies, improving my development workflow, and staying updated with modern tools like Tailwind, DaisyUI, Firebase, Git, and more.Beyond coding, I enjoy collaborating with teams, solving problems creatively, and building projects that showcase real functionality—whether it’s an e-commerce system, booking platform, dashboard, or portfolio website.
+                                I’m constantly learning new technologies, improving my development workflow, and staying updated with modern tools like <span className="font-semibold">Tailwind, DaisyUI, Firebase, Git, and more.</span>Beyond coding, I enjoy collaborating with teams, solving problems creatively, and building projects that showcase real functionality—whether it’s an e-commerce system, booking platform, dashboard, or portfolio website.
                             </p>
-                            <a className="inline-flex items-center gap-2 bg-primary text-white rounded-lg py-3 px-6 hover:bg-blue-500 transition-colors" href={resume} download="Resume_Md_Ali_Hasan.pdf">
+                            <a
+                                className="inline-flex items-center gap-2 bg-primary text-white rounded-lg py-3 px-6 hover:bg-blue-500 transition-colors"
+                                href="http://localhost:5000/uploads/resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <Download />
                                 Download Resume
                             </a>
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 gap-8">
                     <MySkills />
                     <Education />
                 </div>

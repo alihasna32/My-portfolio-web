@@ -81,7 +81,7 @@ const Contact = () => {
                             <a className="w-10 h-10 flex items-center justify-center bg-gray-800/60 rounded-full text-gray-300 hover:bg-primary hover:text-white transition-colors" href="https://github.com/alihasna32">
                                 <Github className="w-5" />
                             </a>
-                            <a className="w-10 h-10 flex items-center justify-center bg-gray-800/60 rounded-full text-gray-300 hover:bg-primary hover:text-white transition-colors" href="#">
+                            <a className="w-10 h-10 flex items-center justify-center bg-gray-800/60 rounded-full text-gray-300 hover:bg-primary hover:text-white transition-colors" href="https://www.linkedin.com/in/md-ali-hasan-1h/">
                                 <Linkedin className="w-5" />
                             </a>
                         </div>

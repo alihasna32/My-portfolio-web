@@ -36,7 +36,7 @@ const Header = () => {
                     </li>
                     <li>
                         <Link className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/portfolio') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/portfolio">
-                            <BriefcaseBusiness className='w-4' /> Portfolio
+                            <BriefcaseBusiness className='w-4' /> Projects
                         </Link>
                     </li>
                     <li>
@@ -52,7 +52,7 @@ const Header = () => {
                 <input id="my-drawer-5" type="checkbox" className="drawer-toggle" ref={drawerRef} />
                 <div className="drawer-content">
                     {/* Button to open drawer */}
-                    <label htmlFor="my-drawer-5" className="btn btn-ghost drawer-button">
+                    <label htmlFor="my-drawer-5" className="btn btn-ghost drawer-button hover:bg-[#2596be]">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -72,12 +72,6 @@ const Header = () => {
                 <div className="drawer-side z-50 ">
                     <label htmlFor="my-drawer-5" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 min-h-full bg-gray-900/30 backdrop-blur-sm border border-white/10 shadow-lg text-base-content flex flex-col gap-2">
-                        {/* Close button inside drawer */}
-                        <li className="self-end right-5 bottom-0.5">
-                            <label htmlFor="my-drawer-5" aria-label="close sidebar" className="btn btn-sm btn-circle btn-ghost text-white bg-error">
-                                ✕
-                            </label>
-                        </li>
                         <li>
                             <Link onClick={closeDrawer} className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/">
                                 <House className="w-4" /> Home
@@ -90,7 +84,7 @@ const Header = () => {
                         </li>
                         <li>
                             <Link onClick={closeDrawer} className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm hover:bg-primary ${isActive('/portfolio') ? 'bg-primary text-white' : 'text-gray-300'}`} to="/portfolio">
-                                <BriefcaseBusiness className="w-4" /> Portfolio
+                                <BriefcaseBusiness className="w-4" /> Projects
                             </Link>
                         </li>
                         <li>

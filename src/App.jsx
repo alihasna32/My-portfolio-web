@@ -1,30 +1,52 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Header from './components/Header';
-import ScrollToTop from './components/ScrollToTop';
+import AdminLayout from './admin/layout/AdminLayout';
+import Dashboard from './admin/pages/Dashboard';
+import Projects from './admin/pages/Projects';
+import AdminGallery from './admin/pages/Gallery';
+import Skills from './admin/pages/Skills';
+import Messages from './admin/pages/Messages';
+import Settings from './admin/pages/Settings';
+import PersonalDetails from './admin/pages/PersonalDetails';
+import PublicLayout from './components/PublicLayout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
-import Footer from './components/Footer';
+
+import AdminLogin from './components/AdminLogin';
+import RequireAuth from './components/RequireAuth';
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <div className="container mx-auto px-2 sm:px-6 sm:py-6 lg:px-8 py-2">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-         <Footer />
-        </div>
-        <ScrollToTop />
-      </Layout>
+      <Routes>
+        {/* Admin Login */}
+        <Route path="/login" element={<AdminLogin />} />
+
+        {/* Protected Admin Routes */}
+        <Route path="/admin" element={
+          <RequireAuth>
+            <AdminLayout />
+          </RequireAuth>
+        }>
+          <Route index element={<Dashboard />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="gallery" element={<AdminGallery />} /> {/* Added Admin Gallery route */}
+          <Route path="skills" element={<Skills />} />
+          <Route path="personal-details" element={<PersonalDetails />} />
+          <Route path="messages" element={<Messages />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+
+        {/* Public Routes */}
+        <Route element={<PublicLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+      </Routes>
     </Router>
   );
 }

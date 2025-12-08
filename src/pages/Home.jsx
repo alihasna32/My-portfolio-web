@@ -16,7 +16,7 @@ const Home = () => {
             transition={{ duration: 0.5 }}
         >
             <main className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-1 space-y-8">
+                <div className="lg:col-span-1 space-y-8 lg:sticky lg:top-24 h-fit">
                     <Hero />
                     <Services />
                 </div>
