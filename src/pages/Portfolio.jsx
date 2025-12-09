@@ -45,7 +45,7 @@ const Portfolio = () => {
 
                 {/* Filter Tabs */}
                 <div className="flex justify-center mb-12">
-                    <div className="flex flex-wrap justify-center gap-2 bg-black/40 p-2 rounded-xl border border-gray-800 backdrop-blur-sm">
+                    <div className="flex flex-wrap justify-center gap-2 bg-gray-900/50 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 p-2 rounded-xl">
                         {filters.map((filter) => (
                             <button
                                 key={filter}
@@ -77,7 +77,7 @@ const Portfolio = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                                className="bg-[#0c151d]/80 backdrop-blur-md border border-gray-800 rounded-2xl overflow-hidden hover:border-[#2596be]/30 hover:shadow-[0_0_30px_rgba(37,150,190,0.15)] transition-all duration-500 group flex flex-col h-full"
+                                className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-[#2596be]/30 hover:shadow-[0_0_30px_rgba(37,150,190,0.15)] transition-all duration-500 group flex flex-col h-full"
                             >
                                 {/* Image Area with Overlay Buttons */}
                                 <div className="relative h-60 overflow-hidden">
@@ -122,7 +122,7 @@ const Portfolio = () => {
                                 <div className="p-6 flex-1 flex flex-col">
                                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#2596be] transition-colors">{project.title}</h3>
 
-                                    <p className="text-gray-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
+                                    <p className="text-gray-400 text-sm leading-relaxed line-clamp-3 flex-1">
                                         {project.description ? (
                                             project.description.length > 100
                                                 ? `${project.description.substring(0, 100)}...`
@@ -130,10 +130,17 @@ const Portfolio = () => {
                                         ) : "No description available for this project."}
                                     </p>
 
-                                    <button className="w-full py-3 rounded-xl bg-white/5 hover:bg-[#2596be]/10 border border-white/5 hover:border-[#2596be]/30 text-gray-300 hover:text-[#2596be] transition-all flex items-center justify-center gap-2 group/btn">
-                                        <span className="font-medium text-sm">Full Details</span>
-                                        <ArrowRight size={16} className="transform group-hover/btn:translate-x-1 transition-transform" />
-                                    </button>
+                                    <div className="flex flex-wrap items-center gap-2 mt-4">
+                                        {project.technologies && project.technologies.length > 0 ? (
+                                            project.technologies.map((tech, i) => (
+                                                <span key={i} className="px-2 py-1 text-xs font-semibold bg-black/60 backdrop-blur-md text-white border border-white/10 rounded-full group-hover:text-[#2596be] group-hover:bg-[#2596be]/10 transition-colors">
+                                                    {tech}
+                                                </span>
+                                            ))
+                                        ) : (
+                                            <span className="text-gray-500 text-xs italic">No technologies listed</span>
+                                        )}
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}

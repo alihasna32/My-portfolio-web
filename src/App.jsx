@@ -16,6 +16,7 @@ import Contact from './pages/Contact';
 
 import AdminLogin from './components/AdminLogin';
 import RequireAuth from './components/RequireAuth';
+import ExpertArea from './admin/pages/ExpertArea'; // Add Import
 
 function App() {
   return (
@@ -32,11 +33,12 @@ function App() {
         }>
           <Route index element={<Dashboard />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="gallery" element={<AdminGallery />} /> {/* Added Admin Gallery route */}
+          <Route path="gallery" element={<AdminGallery />} />
           <Route path="skills" element={<Skills />} />
           <Route path="personal-details" element={<PersonalDetails />} />
           <Route path="messages" element={<Messages />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="expert-area" element={<ExpertArea />} /> {/* Add Route */}
         </Route>
 
         {/* Public Routes */}

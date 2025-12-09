@@ -18,7 +18,8 @@ const Projects = () => {
         image: '',
         link: '', // Live Preview
         codeLink: '', // GitHub Link
-        description: '' // Short Description
+        description: '', // Short Description
+        technologies: '' // Comma separated string
     });
 
     const token = localStorage.getItem('token');
@@ -101,7 +102,8 @@ const Projects = () => {
             image: project.image,
             link: project.link || '',
             codeLink: project.codeLink || '',
-            description: project.description || ''
+            description: project.description || '',
+            technologies: project.technologies ? project.technologies.join(', ') : ''
         });
         setIsModalOpen(true);
     };
@@ -123,7 +125,10 @@ const Projects = () => {
                     'Content-Type': 'application/json',
                     Authorization: `Bearer ${token}`
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify({
+                    ...formData,
+                    technologies: formData.technologies.split(',').map(tech => tech.trim()).filter(tech => tech !== '')
+                })
             });
 
             if (response.ok) {
@@ -316,6 +321,17 @@ const Projects = () => {
                                     value={formData.description}
                                     placeholder="Brief description of the project..."
                                     rows="3"
+                                    className="w-full bg-white/5 border border-gray-700 rounded-lg p-3 text-white focus:border-[#2596be] focus:outline-none focus:ring-1 focus:ring-[#2596be]"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm text-gray-400 mb-1">Technologies (comma separated)</label>
+                                <input
+                                    name="technologies"
+                                    onChange={handleChange}
+                                    value={formData.technologies}
+                                    placeholder="React, Node.js, MongoDB..."
                                     className="w-full bg-white/5 border border-gray-700 rounded-lg p-3 text-white focus:border-[#2596be] focus:outline-none focus:ring-1 focus:ring-[#2596be]"
                                 />
                             </div>

@@ -32,6 +32,7 @@ const Sidebar = () => {
         { path: '/admin/personal-details', icon: User, label: 'Profile' },
         { path: '/admin/messages', icon: MessageSquare, label: 'Messages' },
         { path: '/admin/settings', icon: SettingsIcon, label: 'Settings' },
+        { path: '/admin/expert-area', icon: Award, label: 'Expert Area' },
     ];
 
     return (
