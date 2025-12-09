@@ -11,7 +11,7 @@ const Skills = () => {
 
     const fetchSkills = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/skills');
+            const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/skills');
             const data = await response.json();
             setSkills(data);
             setLoading(false);
@@ -32,7 +32,7 @@ const Skills = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/api/skills', {
+            const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/skills', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ const Skills = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Delete this skill?')) {
             try {
-                const response = await fetch(`http://localhost:5000/api/skills/${id}`, {
+                const response = await fetch(`https://my-portfolio-server-lnc3.onrender.com/api/skills/${id}`, {
                     method: 'DELETE',
                     headers: { Authorization: `Bearer ${token}` }
                 });

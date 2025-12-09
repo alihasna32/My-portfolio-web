@@ -22,12 +22,12 @@ const Projects = () => {
     });
 
     const token = localStorage.getItem('token');
-    const IMGBB_API_KEY = import.meta.env.VITE_IMGBB_API_KEY; 
+    const IMGBB_API_KEY = import.meta.env.VITE_IMGBB_API_KEY;
 
     // Fetch Projects
     const fetchProjects = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/projects');
+            const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/projects');
             const data = await response.json();
             setProjects(data);
             setLoading(false);
@@ -111,8 +111,8 @@ const Projects = () => {
         e.preventDefault();
 
         const url = isEditMode
-            ? `http://localhost:5000/api/projects/${currentProjectId}`
-            : 'http://localhost:5000/api/projects';
+            ? `https://my-portfolio-server-lnc3.onrender.com/api/projects/${currentProjectId}`
+            : 'https://my-portfolio-server-lnc3.onrender.com/api/projects';
 
         const method = isEditMode ? 'PUT' : 'POST';
 
@@ -142,7 +142,7 @@ const Projects = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Delete this project?')) {
             try {
-                const response = await fetch(`http://localhost:5000/api/projects/${id}`, {
+                const response = await fetch(`https://my-portfolio-server-lnc3.onrender.com/api/projects/${id}`, {
                     method: 'DELETE',
                     headers: { Authorization: `Bearer ${token}` }
                 });

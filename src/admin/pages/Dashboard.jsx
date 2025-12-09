@@ -36,7 +36,7 @@ const Dashboard = () => {
         formData.append('resume', resumeFile);
 
         try {
-            const response = await fetch('http://localhost:5000/api/resume/upload', {
+            const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/resume/upload', {
                 method: 'POST',
                 body: formData,
             });
@@ -60,10 +60,10 @@ const Dashboard = () => {
         const fetchStats = async () => {
             try {
                 const [projectsRes, skillsRes, messagesRes, galleryRes] = await Promise.all([
-                    fetch('http://localhost:5000/api/projects'),
-                    fetch('http://localhost:5000/api/skills'),
-                    fetch('http://localhost:5000/api/messages'),
-                    fetch('http://localhost:5000/api/gallery')
+                    fetch('https://my-portfolio-server-lnc3.onrender.com/api/projects'),
+                    fetch('https://my-portfolio-server-lnc3.onrender.com/api/skills'),
+                    fetch('https://my-portfolio-server-lnc3.onrender.com/api/messages'),
+                    fetch('https://my-portfolio-server-lnc3.onrender.com/api/gallery')
                 ]);
 
                 const projects = await projectsRes.json();

@@ -13,7 +13,7 @@ const Portfolio = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/projects?status=Live');
+                const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/projects?status=Live');
                 const data = await response.json();
                 setProjects(data);
                 setLoading(false);
@@ -74,7 +74,8 @@ const Portfolio = () => {
                             <motion.div
                                 key={project._id}
                                 initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                                 className="bg-[#0c151d]/80 backdrop-blur-md border border-gray-800 rounded-2xl overflow-hidden hover:border-[#2596be]/30 hover:shadow-[0_0_30px_rgba(37,150,190,0.15)] transition-all duration-500 group flex flex-col h-full"
                             >

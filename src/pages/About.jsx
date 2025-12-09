@@ -13,7 +13,13 @@ const About = () => {
             transition={{ duration: 0.5 }}
         >
             <main className="space-y-12">
-                <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-sm border border-white/10 shadow-lg p-8 rounded-lg">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-sm border border-white/10 shadow-lg p-8 rounded-lg"
+                >
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                         <div className="lg:col-span-1">
                             <img alt="Portrait of Ali Hasan" className="rounded-lg w-full object-cover" src={profile} />
@@ -31,7 +37,7 @@ const About = () => {
                             </p>
                             <a
                                 className="inline-flex items-center gap-2 bg-primary text-white rounded-lg py-3 px-6 hover:bg-blue-500 transition-colors"
-                                href="http://localhost:5000/uploads/resume.pdf"
+                                href="https://my-portfolio-server-lnc3.onrender.com/uploads/resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -40,11 +46,17 @@ const About = () => {
                             </a>
                         </div>
                     </div>
-                </div>
-                <div className="grid grid-cols-1 gap-8">
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 gap-8"
+                >
                     <MySkills />
                     <Education />
-                </div>
+                </motion.div>
             </main>
         </motion.div>
     );

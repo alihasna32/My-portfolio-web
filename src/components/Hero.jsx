@@ -8,7 +8,7 @@ const Hero = () => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/profile');
+                const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/profile');
                 if (response.ok) {
                     const data = await response.json();
                     setProfileData(data);

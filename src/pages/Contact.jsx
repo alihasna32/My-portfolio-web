@@ -28,15 +28,33 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
         >
             <main className="space-y-12">
-                <div className="text-center mb-12">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-12"
+                >
                     <h1 className="text-4xl font-bold text-white mb-2">Get In Touch</h1>
                     <p className="text-gray-300">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
-                </div>
+                </motion.div>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div className="lg:col-span-2">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="lg:col-span-2"
+                    >
                         <ContactForm />
-                    </div>
-                    <div className="space-y-8">
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="space-y-8"
+                    >
                         <div className="bg-gray-500/10 shadow-[inset_1px_1px_15px_rgba(155,155,155,0.1)] backdrop-blur-sm border border-white/10 shadow-lg p-8 rounded-lg">
                             <h3 className="text-xl font-bold text-white mb-4">Contact Information</h3>
                             <div className="space-y-4 text-gray-300">
@@ -85,7 +103,7 @@ const Contact = () => {
                                 <Linkedin className="w-5" />
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
                 {/* 🔔 CUSTOM TOAST */}
                 <div

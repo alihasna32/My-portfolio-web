@@ -27,7 +27,7 @@ const Gallery = () => {
     // Fetch Gallery Items
     const fetchGalleryItems = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/gallery');
+            const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/gallery');
             const data = await response.json();
             setGalleryItems(data);
             setLoading(false);
@@ -111,8 +111,8 @@ const Gallery = () => {
         e.preventDefault();
 
         const url = isEditMode
-            ? `http://localhost:5000/api/gallery/${currentItemId}`
-            : 'http://localhost:5000/api/gallery';
+            ? `https://my-portfolio-server-lnc3.onrender.com/api/gallery/${currentItemId}`
+            : 'https://my-portfolio-server-lnc3.onrender.com/api/gallery';
 
         const method = isEditMode ? 'PUT' : 'POST';
 
@@ -142,7 +142,7 @@ const Gallery = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Delete this item?')) {
             try {
-                const response = await fetch(`http://localhost:5000/api/gallery/${id}`, {
+                const response = await fetch(`https://my-portfolio-server-lnc3.onrender.com/api/gallery/${id}`, {
                     method: 'DELETE',
                     headers: { Authorization: `Bearer ${token}` }
                 });

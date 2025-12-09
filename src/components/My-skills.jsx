@@ -8,7 +8,7 @@ const MySkills = () => {
     useEffect(() => {
         const fetchSkills = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/skills');
+                const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/skills');
                 const data = await response.json();
                 setSkills(data);
                 setLoading(false);

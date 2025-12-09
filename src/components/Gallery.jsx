@@ -10,7 +10,7 @@ const Gallery = () => {
     useEffect(() => {
         const fetchGallery = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/gallery?status=Live');
+                const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/gallery?status=Live');
                 const data = await response.json();
                 setGalleryItems(data);
                 setLoading(false);

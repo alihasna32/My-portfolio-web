@@ -29,7 +29,7 @@ const ContactForm = () => {
                         message: formData.get('message')
                     };
 
-                    await fetch('http://localhost:5000/api/messages', {
+                    await fetch('https://my-portfolio-server-lnc3.onrender.com/api/messages', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

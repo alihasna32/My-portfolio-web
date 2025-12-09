@@ -11,7 +11,7 @@ const Header = () => {
     const fetchNotifications = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://localhost:5000/api/messages', {
+            const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/messages', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             const data = await response.json();
@@ -44,7 +44,7 @@ const Header = () => {
         // Sync with backend
         try {
             const token = localStorage.getItem('token');
-            await fetch(`http://localhost:5000/api/messages/${messageId}/read`, {
+            await fetch(`https://my-portfolio-server-lnc3.onrender.com/api/messages/${messageId}/read`, {
                 method: 'PUT',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

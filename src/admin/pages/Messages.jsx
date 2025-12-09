@@ -9,7 +9,7 @@ const Messages = () => {
 
     const fetchMessages = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/messages', {
+            const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/messages', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             const data = await response.json();
@@ -28,7 +28,7 @@ const Messages = () => {
     const handleDelete = async (id) => {
         if (window.confirm('Delete message?')) {
             try {
-                const response = await fetch(`http://localhost:5000/api/messages/${id}`, {
+                const response = await fetch(`https://my-portfolio-server-lnc3.onrender.com/api/messages/${id}`, {
                     method: 'DELETE',
                     headers: { Authorization: `Bearer ${token}` }
                 });
