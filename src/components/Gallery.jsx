@@ -36,18 +36,34 @@ const Gallery = () => {
         }
     };
 
-    if (loading) return <div className="text-center text-gray-400 py-10">Loading gallery...</div>;
+    // Skeleton Helper
+    const GallerySkeleton = () => (
+        <div className="flex gap-8 overflow-hidden w-full">
+            {[1, 2, 3].map((i) => (
+                <div key={i} className="min-w-full md:min-w-[400px] bg-gray-500/10 rounded-2xl overflow-hidden border border-white/5 animate-pulse flex flex-col h-[500px]">
+                    <div className="h-64 md:h-80 bg-gray-700/50" />
+                    <div className="p-6 flex-1 space-y-4">
+                        <div className="h-6 bg-gray-700/50 rounded w-3/4" />
+                        <div className="h-4 bg-gray-700/50 rounded w-full" />
+                        <div className="h-4 bg-gray-700/50 rounded w-2/3" />
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
 
     return (
-        <div className="relative group">
+        <div className="relative group min-h-[500px]">
             {/* Gallery Container */}
             <div
                 ref={scrollRef}
                 className="flex overflow-x-auto gap-8 pb-8 snap-x scrollbar-hide xl:gap-8 xl:overflow-visible xl:pb-0 xl:snap-none"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-                {galleryItems.length === 0 ? (
-                    <p className="text-gray-400 mx-auto col-span-full text-center">No gallery items yet.</p>
+                {loading ? (
+                    <GallerySkeleton />
+                ) : galleryItems.length === 0 ? (
+                    <p className="text-gray-400 mx-auto col-span-full text-center py-20">No gallery items yet.</p>
                 ) : (
                     <Carousel
                         autoPlay={true}

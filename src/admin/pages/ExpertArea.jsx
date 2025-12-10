@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Trash2, Upload, Loader } from 'lucide-react';
+import { toast } from 'react-toastify';
 
 const ExpertArea = () => {
     const [experts, setExperts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [newExpertName, setNewExpertName] = useState('');
-    const [newExpertImage, setNewExpertImage] = useState(null);
-    const [imagePreview, setImagePreview] = useState(null);
+    const [newExpertImage, setNewExpertImage] = useState(''); // Stores URL now
     const [uploading, setUploading] = useState(false);
+
+    // CHANGE THIS TO YOUR PRODUCTION URL WHEN DEPLOYING
+    // The backend changes (removing multer) are currently only LOCAL.
+    const API_URL = 'http://localhost:5000/api/experts';
+    // const API_URL = 'https://my-portfolio-server-lnc3.onrender.com/api/experts';
+
+    const IMGBB_API_KEY = import.meta.env.VITE_IMGBB_API_KEY;
 
     useEffect(() => {
         fetchExperts();
@@ -15,7 +22,7 @@ const ExpertArea = () => {
 
     const fetchExperts = async () => {
         try {
-            const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/experts');
+            const response = await fetch(API_URL);
             const data = await response.json();
             setExperts(data);
             setLoading(false);
@@ -25,11 +32,31 @@ const ExpertArea = () => {
         }
     };
 
-    const handleImageChange = (e) => {
+    const handleImageUpload = async (e) => {
         const file = e.target.files[0];
-        if (file) {
-            setNewExpertImage(file);
-            setImagePreview(URL.createObjectURL(file));
+        if (!file) return;
+
+        setUploading(true);
+        const imgData = new FormData();
+        imgData.append('image', file);
+
+        try {
+            const res = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+                method: 'POST',
+                body: imgData,
+            });
+            const data = await res.json();
+            if (data.success) {
+                setNewExpertImage(data.data.url);
+                toast.success('Image uploaded to ImgBB');
+            } else {
+                toast.error('Image upload failed');
+            }
+        } catch (error) {
+            console.error('Error uploading image:', error);
+            toast.error('Error uploading image');
+        } finally {
+            setUploading(false);
         }
     };
 
@@ -37,32 +64,28 @@ const ExpertArea = () => {
         e.preventDefault();
         if (!newExpertName || !newExpertImage) return;
 
-        setUploading(true);
-        const formData = new FormData();
-        formData.append('name', newExpertName);
-        formData.append('image', newExpertImage);
-
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('https://my-portfolio-server-lnc3.onrender.com/api/experts', {
+            const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: {
+                    'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: formData
+                body: JSON.stringify({
+                    name: newExpertName,
+                    image: newExpertImage
+                })
             });
 
             if (response.ok) {
                 const newExpert = await response.json();
                 setExperts([...experts, newExpert]);
                 setNewExpertName('');
-                setNewExpertImage(null);
-                setImagePreview(null);
+                setNewExpertImage('');
             }
         } catch (error) {
             console.error('Error adding expert:', error);
-        } finally {
-            setUploading(false);
         }
     };
 
@@ -70,7 +93,7 @@ const ExpertArea = () => {
         if (window.confirm('Delete this item?')) {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch(`https://my-portfolio-server-lnc3.onrender.com/api/experts/${id}`, {
+                const response = await fetch(`${API_URL}/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -112,19 +135,20 @@ const ExpertArea = () => {
                                 type="file"
                                 id="expert-image"
                                 accept="image/*"
-                                onChange={handleImageChange}
+                                onChange={handleImageUpload}
                                 className="hidden"
+                                disabled={uploading}
                             />
                             <label
                                 htmlFor="expert-image"
-                                className="flex items-center justify-center gap-2 w-full bg-[#0c151d] border border-dashed border-gray-600 rounded-lg px-4 py-2 text-gray-400 cursor-pointer hover:border-[#2596be] transition-colors"
+                                className={`flex items-center justify-center gap-2 w-full bg-[#0c151d] border border-dashed border-gray-600 rounded-lg px-4 py-2 text-gray-400 cursor-pointer hover:border-[#2596be] transition-colors ${uploading ? 'opacity-50' : ''}`}
                             >
-                                {imagePreview ? (
-                                    <img src={imagePreview} alt="Preview" className="h-6 w-6 object-contain" />
+                                {newExpertImage ? (
+                                    <img src={newExpertImage} alt="Preview" className="h-6 w-6 object-contain" />
                                 ) : (
                                     <Upload size={18} />
                                 )}
-                                <span className="truncate">{newExpertImage ? newExpertImage.name : 'Choose Image'}</span>
+                                <span className="truncate">{uploading ? 'Uploading...' : (newExpertImage ? 'Change Image' : 'Choose Image')}</span>
                             </label>
                         </div>
                     </div>
