@@ -69,8 +69,7 @@ const Gallery = () => {
                         autoPlay={true}
                         infiniteLoop={true}
                         showThumbs={false}
-                        showStatus={false}
-                        interval={5000}
+                        interval={3000}
                         className="min-w-full mx-auto"
                         showArrows={true}
                     >
