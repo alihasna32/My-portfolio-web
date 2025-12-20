@@ -5,7 +5,6 @@ I'm thrilled to announce the completion of my latest full-stack personal portfol
 This portfolio is crafted to provide visitors with an engaging, seamless experience while highlighting my expertise in full-stack development through a performant and visually appealing interface.
 
 ![Portfolio Preview](https://github.com/alihasna32/My-portfolio-web/blob/main/Screenshot%202025-12-20%20155716.png)  
-*(Replace the above with your actual screenshot URL for better visuals)*
 
 ## 🛠️ Tech Stack
 
